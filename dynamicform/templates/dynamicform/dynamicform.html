@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+{% endblock head %}
+
+
+{% block content %}
+<div class="container">
+  <h1>Input your data</h1>
+  <form action="" method="post">
+    {% csrf_token %}
+    <div class="form-group" id="form-group">
+      {{ form.as_p }}
+    </div>
+      <button type="button" class="btn btn-info btn-xs" onclick="input_add()">Add new input</button>
+
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>
+{% endblock content %}
+
+
+{% block scripts %}
+<script>
+    var input_count = 1;
+    function input_add(){
+
+        var input = document.createElement('input');
+        var label = document.createElement('label');
+
+        input.name = 'input_name' + input_count;
+        input.type = "text";
+        input.id = "input_name" + input_count;
+        input.className = "form-control";
+        input.placeholder = "Input_name" + input_count;
+
+        label.setAttribute("for","input_name" + input_count);
+        label.innerHTML = "input_name" + input_count + ":";
+
+        document.getElementById('form-group').appendChild(label);
+        document.getElementById('form-group').appendChild(input);
+
+        input_count += 1;
+    }
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+{% endblock scripts %}

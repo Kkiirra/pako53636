@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% block head %}
+    {% endblock head %}
+</head>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSite</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Python</a></li>
+      <li><a href="#">+</a></li>
+      <li><a href="#">Django</a></li>
+      <li><a href="#">=</a></li>
+      <li><a href="#">BestFriends</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<body>
+{% block content %}
+{% endblock content %}
+</body>
+
+
+{% block scripts %}
+{% endblock scripts %}
+
+</html>
