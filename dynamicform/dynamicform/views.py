@@ -32,7 +32,7 @@ def create_formdata(request):
 
 def done_form(request):
     form_objects = [
-        [index.user_field.replace ('"', ' '), index.user_data.replace ('"', ' ')]
+        [index.user_field.replace('"', ' '), index.user_data.replace('"', ' ')]
         for index in UserModel.objects.all()
     ]
 
