@@ -4,3 +4,5 @@
 
 Так как с версии 4.0 django.contrib.postgres.fields было удалено и заменено на django.db.models,
 но если запустить более раннюю версию джанго всё также будет работать.
+
+(Test project from company)
